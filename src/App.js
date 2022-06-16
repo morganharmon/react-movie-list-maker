@@ -28,7 +28,10 @@ function App() {
         setColorInput={ setColorInput }
         ColorInput={ ColorInput }
         handleSubmit={ handleSubmit } />
-      <Preview />
+      <Preview
+        titleInput={ titleInput }
+        directorInput={ directorInput }
+        colorInput={ colorInput } />
       <Posters />
     </div>
   );

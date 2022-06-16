@@ -11,7 +11,7 @@ export default function MovieForm({
   handleSubmit
 }) {
   return (
-    <section id='movie-form' >
+    <section id='movie-form-section' >
       <form onSubmit={handleSubmit}>
         <TitleInput titleInput={ titleInput } setTitleInput={ setTitleInput } />
         <DirectorInput directorInput={ directorInput } setDirectorInput={ setDirectorInput } />

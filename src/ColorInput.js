@@ -1,5 +1,8 @@
-export default function ColorInput({ setColorInput, colorInput }) {
+export default function ColorInput({ colorInput, setColorInput }) {
   return (
-    <input onChange={(e) => setColorInput(e.target.value)} value={ colorInput } />
+    <div>
+      <label>Background color: </label>
+      <input type="color" onChange={(e) => setColorInput(e.target.value)} value={ colorInput } />
+    </div>
   );
 }

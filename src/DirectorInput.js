@@ -1,5 +1,8 @@
 export default function DirectorInput({ setDirectorInput, directorInput }) {
   return (
-    <input onChange={(e) => setDirectorInput(e.target.value)} value={ directorInput } />
+    <div>
+      <label>Director: </label>
+      <input onChange={(e) => setDirectorInput(e.target.value)} value={ directorInput } />
+    </div>
   );
 }
