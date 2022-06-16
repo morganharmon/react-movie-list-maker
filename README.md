@@ -1,3 +1,5 @@
+<img src='./public/React-movie-list-maker.jpg'>
+
 # Alchemy React Base Template
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
