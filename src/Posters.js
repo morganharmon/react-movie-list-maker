@@ -1,8 +1,9 @@
-export default function Posters({ Poster, posterList }) {
+export default function Posters({ Poster, visiblePosters, Filter, filterInput, setFilterInput }) {
   return (
     <section>
+      <Filter filterInput={ filterInput } setFilterInput={ setFilterInput } />
       {
-        posterList.map((poster, i) => <Poster key={poster + i} poster={ poster } />)
+        visiblePosters.map((poster, i) => <Poster key={poster + i} poster={ poster } />)
       }
     </section>
   );

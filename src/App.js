@@ -7,12 +7,15 @@ import TitleInput from './TitleInput.js';
 import DirectorInput from './DirectorInput.js';
 import ColorInput from './ColorInput.js';
 import Poster from './Poster.js';
+import Filter from './Filter.js';
 
 function App() {
   const [titleInput, setTitleInput] = useState('');
   const [directorInput, setDirectorInput] = useState('');
   const [colorInput, setColorInput] = useState('');
   const [posterList, setPosterList] = useState([]);
+  const [visiblePosters, setVisiblePosters] = useState([]);
+  const [filterInput, setFilterInput] = useState('');
   
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,8 +23,12 @@ function App() {
   }
   
   useEffect(() => {
-    console.log(posterList);
+    setVisiblePosters(posterList);
   }, [posterList]);
+
+  useEffect(() => {
+    setVisiblePosters(posterList.filter(poster => poster.title.toLowerCase().includes(filterInput.toLowerCase())));
+  }, [filterInput]);
 
   return (
     <div className="App">
@@ -42,7 +49,10 @@ function App() {
         colorInput={ colorInput } />
       <Posters
         Poster={ Poster }
-        posterList={ posterList } />
+        visiblePosters={ visiblePosters }
+        Filter={ Filter }
+        filterInput={ filterInput }
+        setFilterInput={ setFilterInput } />
     </div>
   );
 }
