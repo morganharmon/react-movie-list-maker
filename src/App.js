@@ -14,7 +14,7 @@ function App() {
   const [titleInput, setTitleInput] = useState('');
   const [directorInput, setDirectorInput] = useState('');
   const [colorInput, setColorInput] = useState('#AE659D');
-  const [posterList, setPosterList] = useState([{ title: 'Star Wars', director: 'Stephen Spielberg', color: '#FFCCCC' }]);
+  const [posterList, setPosterList] = useState([{ title: 'Star Wars: Episode IV - A New Hope', director: 'Steven Spielberg', color: '#FFCCCC' }]);
   const [visiblePosters, setVisiblePosters] = useState([]);
   const [filterInput, setFilterInput] = useState('');
   
