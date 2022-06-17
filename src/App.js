@@ -13,8 +13,8 @@ import Header from './Header.js';
 function App() {
   const [titleInput, setTitleInput] = useState('');
   const [directorInput, setDirectorInput] = useState('');
-  const [colorInput, setColorInput] = useState('#1886EC');
-  const [posterList, setPosterList] = useState([]);
+  const [colorInput, setColorInput] = useState('#AE659D');
+  const [posterList, setPosterList] = useState([{ title: 'Star Wars', director: 'Stephen Spielberg', color: '#FFCCCC' }]);
   const [visiblePosters, setVisiblePosters] = useState([]);
   const [filterInput, setFilterInput] = useState('');
   

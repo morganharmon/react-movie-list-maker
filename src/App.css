@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: green;
+  background-color: #5E9EDC;
 }
 
 .App-logo {
@@ -38,16 +38,13 @@
   }
 }
 
-#preview-poster {
-  border: solid blue 2px;
-}
-
 .poster {
   width: 200px;
   height: 200px;
   display: flex;
   flex-direction: column;
   margin: 10px;
+  border: solid #333C9A 2px;
 }
 
 #preview-section {
@@ -59,4 +56,25 @@
 #posters-section {
   display: flex;
   flex-wrap: wrap;
+}
+
+header {
+  color: #FFFFFF;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #D5BE76;
+}
+
+input:hover {
+  background-color: #D5BE76;
+}
+
+header:hover {
+  color: #D5BE76;
+}
+
+.poster:hover {
+  border: solid 2px #D5BE76;
 }
