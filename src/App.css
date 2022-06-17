@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: green;
 }
 
 .App-logo {
@@ -39,4 +40,23 @@
 
 #preview-poster {
   border: solid blue 2px;
+}
+
+.poster {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+#preview-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+#posters-section {
+  display: flex;
+  flex-wrap: wrap;
 }

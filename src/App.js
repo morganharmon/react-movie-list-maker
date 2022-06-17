@@ -8,11 +8,12 @@ import DirectorInput from './DirectorInput.js';
 import ColorInput from './ColorInput.js';
 import Poster from './Poster.js';
 import Filter from './Filter.js';
+import Header from './Header.js';
 
 function App() {
   const [titleInput, setTitleInput] = useState('');
   const [directorInput, setDirectorInput] = useState('');
-  const [colorInput, setColorInput] = useState('');
+  const [colorInput, setColorInput] = useState('#1886EC');
   const [posterList, setPosterList] = useState([]);
   const [visiblePosters, setVisiblePosters] = useState([]);
   const [filterInput, setFilterInput] = useState('');
@@ -20,23 +21,28 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
     setPosterList([...posterList, { title: titleInput, director: directorInput, color: colorInput }]);
+    setTitleInput('');
+    setDirectorInput('');
+    setFilterInput('');
   }
   
   function handleDelete(title) {
     const deleted = posterList.filter(poster => poster.title !== title);
     setPosterList(deleted);
+    setFilterInput('');
   }
-
+  
+  useEffect(() => {
+    setVisiblePosters(posterList.filter(poster => poster.title.toLowerCase().includes(filterInput.toLowerCase())));
+  }, [filterInput, posterList]);
+  
   useEffect(() => {
     setVisiblePosters(posterList);
   }, [posterList]);
 
-  useEffect(() => {
-    setVisiblePosters(posterList.filter(poster => poster.title.toLowerCase().includes(filterInput.toLowerCase())));
-  }, [filterInput]);
-
   return (
     <div className="App">
+      <Header />
       <MovieForm 
         titleInput={ titleInput }
         setTitleInput={ setTitleInput }
