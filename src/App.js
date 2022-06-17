@@ -22,6 +22,11 @@ function App() {
     setPosterList([...posterList, { title: titleInput, director: directorInput, color: colorInput }]);
   }
   
+  function handleDelete(title) {
+    const deleted = posterList.filter(poster => poster.title !== title);
+    setPosterList(deleted);
+  }
+
   useEffect(() => {
     setVisiblePosters(posterList);
   }, [posterList]);
@@ -52,7 +57,8 @@ function App() {
         visiblePosters={ visiblePosters }
         Filter={ Filter }
         filterInput={ filterInput }
-        setFilterInput={ setFilterInput } />
+        setFilterInput={ setFilterInput }
+        handleDelete={ handleDelete } />
     </div>
   );
 }
