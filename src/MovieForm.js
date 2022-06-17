@@ -12,7 +12,7 @@ export default function MovieForm({
 }) {
   return (
     <section id='movie-form-section' >
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <TitleInput titleInput={ titleInput } setTitleInput={ setTitleInput } />
         <DirectorInput directorInput={ directorInput } setDirectorInput={ setDirectorInput } />
         <ColorInput colorInput={ colorInput } setColorInput={ setColorInput } />

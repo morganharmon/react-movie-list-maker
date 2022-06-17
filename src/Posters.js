@@ -1,5 +1,9 @@
-export default function Posters() {
+export default function Posters({ Poster, posterList }) {
   return (
-    <div></div>
+    <section>
+      {
+        posterList.map((poster, i) => <Poster key={poster + i} poster={ poster } />)
+      }
+    </section>
   );
 }

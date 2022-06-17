@@ -6,14 +6,22 @@ import Posters from './Posters.js';
 import TitleInput from './TitleInput.js';
 import DirectorInput from './DirectorInput.js';
 import ColorInput from './ColorInput.js';
+import Poster from './Poster.js';
 
 function App() {
   const [titleInput, setTitleInput] = useState('');
   const [directorInput, setDirectorInput] = useState('');
   const [colorInput, setColorInput] = useState('');
-  function handleSubmit() {
-    
+  const [posterList, setPosterList] = useState([]);
+  
+  function handleSubmit(e) {
+    e.preventDefault();
+    setPosterList([...posterList, { title: titleInput, director: directorInput, color: colorInput }]);
   }
+  
+  useEffect(() => {
+    console.log(posterList);
+  }, [posterList]);
 
   return (
     <div className="App">
@@ -32,7 +40,9 @@ function App() {
         titleInput={ titleInput }
         directorInput={ directorInput }
         colorInput={ colorInput } />
-      <Posters />
+      <Posters
+        Poster={ Poster }
+        posterList={ posterList } />
     </div>
   );
 }
