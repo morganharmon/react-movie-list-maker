@@ -34,7 +34,7 @@ function App() {
 
   const memoizedCallback = useCallback(() => {
     setVisiblePosters(posterList.filter(poster => poster.title.toLowerCase().includes(filterInput.toLowerCase())));
-  }, [filterInput]);
+  }, [filterInput, posterList]);
   
   useEffect(() => {
     memoizedCallback();
