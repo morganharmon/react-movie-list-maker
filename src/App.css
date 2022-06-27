@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #5E9EDC;
 }
 
 .App-logo {
@@ -35,4 +36,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.poster {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: solid #333C9A 2px;
+}
+
+#preview-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+#posters-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header {
+  color: #FFFFFF;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #D5BE76;
+}
+
+input:hover {
+  background-color: #D5BE76;
+}
+
+header:hover {
+  color: #D5BE76;
+}
+
+.poster:hover {
+  border: solid 2px #D5BE76;
 }
