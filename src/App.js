@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import MovieForm from './MovieForm.js';
 import Preview from './Preview.js';
 import Posters from './Posters.js';
@@ -31,10 +31,14 @@ function App() {
     setPosterList(deleted);
     setFilterInput('');
   }
+
+  const memoizedCallback = useCallback(() => {
+    setVisiblePosters(posterList.filter(poster => poster.title.toLowerCase().includes(filterInput.toLowerCase())));
+  }, [filterInput]);
   
   useEffect(() => {
-    setVisiblePosters(posterList.filter(poster => poster.title.toLowerCase().includes(filterInput.toLowerCase())));
-  }, [filterInput, posterList]);
+    memoizedCallback();
+  }, [filterInput, memoizedCallback]);
   
   useEffect(() => {
     setVisiblePosters(posterList);
